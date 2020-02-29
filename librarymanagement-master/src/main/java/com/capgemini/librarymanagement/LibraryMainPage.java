@@ -3,6 +3,8 @@ package com.capgemini.librarymanagement;
 import java.util.Scanner;
 
 import com.capgemini.librarymanagement.controller.LibraryManagementController;
+import com.capgemini.librarymanagement.controller.UserController;
+import com.capgemini.librarymanagement.dto.UserInfoBean;
 
 public class LibraryMainPage {
 
@@ -26,7 +28,7 @@ public class LibraryMainPage {
 				String adminName = scanner.next();
 				System.out.println("Enter Password \n");
 				String adminPassword = scanner.next();
-				if (adminName.equals("Admin") && adminPassword.equals("admin@123")) {
+				if (adminName.equals("a") && adminPassword.equals("a")) {
 					libraryManagementController.admin();
 				} else {
 					System.out.println("Please enter correct username and password?");
@@ -39,8 +41,12 @@ public class LibraryMainPage {
 				System.out.println("Enter Password \n");
 				String userPassword = scanner.next();
 
-				if (userName.equals("User") && userPassword.equals("user@123")) {
-					libraryManagementController.user();
+				if (userName.equals("u") && userPassword.equals("u")) {
+					UserInfoBean bean = new UserInfoBean();
+					bean.setUsrName("u");
+					bean.setUsrPassword("u");
+				UserController controller = new UserController();
+				controller.user();
 				} else {
 					System.out.println("Please enter correct username and password?");
 				}

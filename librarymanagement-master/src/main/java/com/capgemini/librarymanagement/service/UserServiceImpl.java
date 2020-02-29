@@ -10,8 +10,10 @@ public class UserServiceImpl implements UserService{
 
 	public BookInfo searchBook(int bookId) {
 		return dao.searchBook(bookId);
-		
-		
+	}
+
+	public BookInfo searchBookWithName(String name) {
+		return dao.searchBookWithName(name);
 	}
 
 	
